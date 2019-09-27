@@ -49,7 +49,6 @@
                         <ul class="nav masthead-nav">
                             <li><a href="https://twitter.com/stefsabi"><i class="fa fa-twitter fa-fw"></i></a></li>
                             <li><a href="https://www.facebook.com/stefano.sabino"><i class="fa fa-facebook fa-fw"></i></a></li>
-                            <li><a href="https://plus.google.com/+StefanoSabino/"><i class="fa fa-google-plus fa-fw"></i></a></li>
                             <li><a href="mailto:info@daten-server.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                         </ul>
                     </nav>
