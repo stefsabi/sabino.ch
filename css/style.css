@@ -6,8 +6,8 @@ body {
     /* background-color: #000; */
 }
 body {
-    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
-    color: #1a2233;
+    background: linear-gradient(135deg, #000000 0%, #0076fc 100%);
+    color: #fff;
     font-family: 'Roboto', Arial, sans-serif;
     text-align: center;
     text-shadow: none;
@@ -459,4 +459,7 @@ iframe { border: 1px solid #bebebe; }
     .header h1 { font-size: 2rem; }
     .section { padding: 1.2rem 0.5rem; }
     .wappen-row img { width: 80px; }
+}
+.header, .section, .footer {
+    color: #fff;
 }
