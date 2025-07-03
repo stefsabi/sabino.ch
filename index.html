@@ -7,7 +7,7 @@
     <meta name="description" content="Familie Sabino">
     <meta name="author" content="Stefano Sabino">
 
-    <title>Familie Sabino</title>
+    <title>Familie Sabino – Die legendäre Onepager-Show</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -17,6 +17,132 @@
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            color: #1a2233;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        .header {
+            text-align: center;
+            padding: 4rem 1rem 2rem 1rem;
+            background: linear-gradient(120deg, #1a2233 60%, #f8fafc 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .header img {
+            width: 180px;
+            max-width: 80vw;
+            filter: drop-shadow(0 8px 32px #0008);
+            animation: bounceIn 1.5s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.5) translateY(-200px); opacity: 0; }
+            60% { transform: scale(1.1) translateY(30px); opacity: 1; }
+            80% { transform: scale(0.95) translateY(-10px); }
+            100% { transform: scale(1) translateY(0); }
+        }
+        .header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin-top: 1rem;
+            color: #ffe066;
+            text-shadow: 2px 2px 8px #0006;
+        }
+        .header .subtitle {
+            font-size: 1.3rem;
+            color: #fffbe6;
+            margin-bottom: 1.5rem;
+        }
+        .funny-emoji {
+            font-size: 2.5rem;
+            margin: 0 0.3em;
+            vertical-align: middle;
+            animation: wiggle 1.2s infinite alternate;
+        }
+        @keyframes wiggle {
+            0% { transform: rotate(-10deg); }
+            100% { transform: rotate(10deg); }
+        }
+        .section {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 32px #0001;
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(.4,0,.2,1);
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-title {
+            font-size: 2rem;
+            color: #1a2233;
+            margin-bottom: 1.2rem;
+            font-weight: bold;
+        }
+        .wappen-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0 1rem 0;
+            flex-wrap: wrap;
+        }
+        .wappen-row img {
+            width: 120px;
+            max-width: 40vw;
+            border-radius: 1rem;
+            box-shadow: 0 2px 16px #0002;
+            background: #fffbe6;
+            animation: slideInWappen 2s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes slideInWappen {
+            0% { opacity: 0; transform: translateX(-200px) scale(0.7); }
+            80% { opacity: 1; transform: translateX(20px) scale(1.05); }
+            100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        .social-section {
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+        }
+        .social-icons a {
+            color: #1a2233;
+            font-size: 2.2rem;
+            margin: 0 0.7rem;
+            transition: color 0.2s;
+        }
+        .social-icons a:hover {
+            color: #ffe066;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem 1rem 1rem;
+            color: #fff;
+            background: linear-gradient(120deg, #1a2233 60%, #ffe066 100%);
+            font-size: 1.1rem;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+        .footer .funny-emoji {
+            font-size: 2rem;
+            animation: none;
+        }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2rem; }
+            .section { padding: 1.2rem 0.5rem; }
+            .wappen-row img { width: 80px; }
+        }
+    </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -53,10 +179,10 @@
             </div>
 
             <div class="cover-container">
-            <div class="inner cover">  <h1 class="cover-heading"><a href="https://www.sabino.ch/"><img src="https://sabino.ch/img/sabino_name_schrift_weiss.png"  height="100" alt="sabino" class="section-wappen"/></a></h1>
-              <br><br><p><img src="https://sabino.ch/img/sabino_print-logo_krone.png"  height="20" alt="sabino" class="section-wappen"/></p><p class="section-text">Nobili - Feudatari - Patrizi - Conti</p>
-              <div><img src="https://sabino.ch/img/sabino_print-logo1.png"  height="250" alt="sabino" class="section-wappen"/>
-              <img src="https://sabino.ch/img/sabino_print-logo3.png"  height="250" alt="sabino" class="section-wappen"/><p class="section-text"><small>Blasone della famiglia Sabino o Sabini di Altamura Fonte bibliografica "Dizionario storico blasonico delle famigle noboli e notabili italiane estinte e fiorenti" vol.II compilato dal Comm. G.B. di Crollalanza edito presso la direzione del giornale, Pisa 1888.</small></p><p class="section-text"><small>Antica ed assai nobile famiglia feudataria d'Abruzzo, con prima residenza in Chieti, conosciuta come Sabini o Sabino, propagatasi, nel corso dei secoli, in diverse regioni d'Italia e del Mondo. La leggenda narra che la Famiglia discenda da Raino, Conte della Sabina nel secolo IX, appartenente ad una stirpe ramo della celebre casata dei Crescenzie, che ha primeggiato nella storia di Roma dalla metà del secolo X alla metà del secolo XI. Ciò di cui invece storicamente siamo certi e che tal famiglia passò a risiedere in L'Aquila sul calar del secolo decimo sesto ed ivi venne ascritta al Patriziato. Estintasi nel ramo primogenito nel secolo decimo settimo, la famiglia Sabino sopravvisse e sopravvive tutt'ora nei rami collaterali, tra cui quello che in Lanciano diede personaggi distintisi come organai e musicisti. E' fiorita in Altamura un 'altra omonima famiglia, la cui parentela con la precedente non è stata storicamente accertata, alla quale appartenne quel Bernardo che, nel 1497, per gli eminenti servigi resi da lui e dai suoi maggiori alla Regia Casa d'Aragona, venne dal re Federico riconosciuto nei privilegi e nel titolo di conte palatino, già concessi dall'imperatore Enrico (VI ad un Angelo, suo antenato. Similmente in (Veneto ove iS. furono nobili in Venezia. Da una analisi cromatica e simbolica dello stemma, possiamo, infine, ricavare alcune importanti informazioni sulle virtù associate a tal cognome. L'azzurra essendo il colore del cielo, simboleggia tutte le virtù più elevate e, tra quelle spirituali, devozione, fedeltà, castità, giustizia, santità. Per le qualità mondane simboleggia bellezza, nobiltà, fortezza, fermezza incorruttibili, vigilanza, vittoria, perseveranza, ricchezza, amore per la patria, buon augurio, fama gloriosa. Il leone d'oro in campo azzurro rappresenta il valore di un capitano che con la prudenza giunse ai più alti onori. La torre è contrassegno d'antica e cospicua nobiltà, perchè' nessuno fino dai tempi remoti, poteva fabbricar torri se non era d'illustre e potente famiglia. I cognomi così antichi, senza dubbio alcuno, rendono decoro non solo alle famiglie ma anche alle città che li hanno accolti; pare siano, infatti, molto riguardevoli i soggetti viventi di questa famiglia che, con tanto decoro, sostentano
+            <div class="inner cover">  <h1 class="cover-heading"><a href="https://www.sabino.ch/"><img src="img/sabino_name_schrift_weiss.png"  height="100" alt="sabino" class="section-wappen"/></a></h1>
+              <br><br><p><img src="img/sabino_print-logo_krone.png"  height="20" alt="sabino" class="section-wappen"/></p><p class="section-text">Nobili - Feudatari - Patrizi - Conti</p>
+              <div><img src="img/sabino_print-logo1.png"  height="250" alt="sabino" class="section-wappen"/>
+              <img src="img/sabino_print-logo3.png"  height="250" alt="sabino" class="section-wappen"/><p class="section-text"><small>Blasone della famiglia Sabino o Sabini di Altamura Fonte bibliografica "Dizionario storico blasonico delle famigle noboli e notabili italiane estinte e fiorenti" vol.II compilato dal Comm. G.B. di Crollalanza edito presso la direzione del giornale, Pisa 1888.</small></p><p class="section-text"><small>Antica ed assai nobile famiglia feudataria d'Abruzzo, con prima residenza in Chieti, conosciuta come Sabini o Sabino, propagatasi, nel corso dei secoli, in diverse regioni d'Italia e del Mondo. La leggenda narra che la Famiglia discenda da Raino, Conte della Sabina nel secolo IX, appartenente ad una stirpe ramo della celebre casata dei Crescenzie, che ha primeggiato nella storia di Roma dalla metà del secolo X alla metà del secolo XI. Ciò di cui invece storicamente siamo certi e che tal famiglia passò a risiedere in L'Aquila sul calar del secolo decimo sesto ed ivi venne ascritta al Patriziato. Estintasi nel ramo primogenito nel secolo decimo settimo, la famiglia Sabino sopravvisse e sopravvive tutt'ora nei rami collaterali, tra cui quello che in Lanciano diede personaggi distintisi come organai e musicisti. E' fiorita in Altamura un 'altra omonima famiglia, la cui parentela con la precedente non è stata storicamente accertata, alla quale appartenne quel Bernardo che, nel 1497, per gli eminenti servigi resi da lui e dai suoi maggiori alla Regia Casa d'Aragona, venne dal re Federico riconosciuto nei privilegi e nel titolo di conte palatino, già concessi dall'imperatore Enrico (VI ad un Angelo, suo antenato. Similmente in (Veneto ove iS. furono nobili in Venezia. Da una analisi cromatica e simbolica dello stemma, possiamo, infine, ricavare alcune importanti informazioni sulle virtù associate a tal cognome. L'azzurra essendo il colore del cielo, simboleggia tutte le virtù più elevate e, tra quelle spirituali, devozione, fedeltà, castità, giustizia, santità. Per le qualità mondane simboleggia bellezza, nobiltà, fortezza, fermezza incorruttibili, vigilanza, vittoria, perseveranza, ricchezza, amore per la patria, buon augurio, fama gloriosa. Il leone d'oro in campo azzurro rappresenta il valore di un capitano che con la prudenza giunse ai più alti onori. La torre è contrassegno d'antica e cospicua nobiltà, perchè' nessuno fino dai tempi remoti, poteva fabbricar torri se non era d'illustre e potente famiglia. I cognomi così antichi, senza dubbio alcuno, rendono decoro non solo alle famiglie ma anche alle città che li hanno accolti; pare siano, infatti, molto riguardevoli i soggetti viventi di questa famiglia che, con tanto decoro, sostentano
 questo nobile cognome, che ha avuto vari soggetti illustri.
 </small></p></div>
 
@@ -84,6 +210,57 @@ questo nobile cognome, che ha avuto vari soggetti illustri.
 <script src="js/device.min.js"></script>
 <script src="js/jquery.mb.YTPlayer.js"></script>
 <script src="js/custom.js"></script>
+
+<div class="header">
+    <img src="img/sabino_print-logo1.png" alt="Wappen 1" class="section-wappen">
+    <img src="img/sabino_print-logo3.png" alt="Wappen 2" class="section-wappen">
+    <h1>Familie Sabino <span class="funny-emoji">👑</span></h1>
+    <div class="subtitle">Nobili – Feudatari – Patrizi – Conti <span class="funny-emoji">🎉</span></div>
+</div>
+
+<div class="section" id="geschichte">
+    <div class="section-title">Unsere (fast unglaubliche) Familiengeschichte <span class="funny-emoji">📜</span></div>
+    <p>Antica ed assai nobile famiglia feudataria d'Abruzzo, mit Wurzeln in Chieti, bekannt als Sabini oder Sabino, verbreitet in ganz Italien und der Welt. Die Legende sagt: Wir stammen von Raino, Graf der Sabina, ab – und das schon im 9. Jahrhundert! <span class="funny-emoji">🦁</span></p>
+    <p>Historisch belegt: Unsere Familie war im Patriziat von L'Aquila, brachte Orgelbauer und Musiker hervor und wurde sogar vom König zum Grafen ernannt. <span class="funny-emoji">🎶</span> Und das Wappen? Ein goldener Löwe auf Blau – für Mut, Stärke und ein bisschen Drama!</p>
+    <div class="wappen-row">
+        <img src="img/sabino_print-logo1.png" alt="Wappen 1" class="section-wappen">
+        <img src="img/sabino_print-logo3.png" alt="Wappen 2" class="section-wappen">
+    </div>
+    <p><small>Quelle: Dizionario storico blasonico delle famiglie nobili e notabili italiane estinte e fiorenti, Pisa 1888.</small></p>
+</div>
+
+<div class="section social-section" id="social">
+    <div class="section-title">Folge uns – oder schau einfach zu! <span class="funny-emoji">😎</span></div>
+    <div class="social-icons">
+        <a href="https://twitter.com/stefsabi" target="_blank" rel="noopener" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/stefano.sabino" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:info@ideas-by-sabino.com" title="E-Mail"><i class="fa fa-envelope"></i></a>
+        <a href="#" title="Instagram (bald)"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div style="margin-top:2rem;">
+        <strong>Instagram- und Facebook-Stream:</strong><br>
+        <em>Hier könnte dein Social Feed stehen! (Einbindung auf Wunsch möglich)</em>
+    </div>
+</div>
+
+<div class="footer">
+    <span class="funny-emoji">🍝</span> Copyright &copy; by Stefano Sabino 2025 &ndash; "Wer Sabino heißt, hat immer einen Grund zu feiern!" <span class="funny-emoji">🥳</span>
+</div>
+
+<script>
+    // IntersectionObserver für animierte Abschnitte
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.section').forEach(el => observer.observe(el));
+    });
+</script>
 
 </body>
 </html>
