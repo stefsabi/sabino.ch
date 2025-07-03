@@ -390,8 +390,9 @@ iframe { border: 1px solid #bebebe; }
     color: #111;
     border-radius: 0;
     box-shadow: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 1.5rem 2rem;
+    max-width: 900px;
 }
 .section.visible {
     opacity: 1;
