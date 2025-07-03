@@ -42,5 +42,22 @@
         document.querySelectorAll('.section-text, .section-wappen').forEach(el => {
             observer.observe(el);
         });
+
+        // Parallax für Header und Wappen
+        window.addEventListener('scroll', function() {
+            const scrolled = window.scrollY;
+            const header = document.querySelector('.parallax-header');
+            const wappen = document.querySelectorAll('.parallax-wappen');
+            const title = document.querySelector('.gold-title');
+            if(header) {
+                header.style.backgroundPosition = `center ${scrolled * 0.2}px`;
+            }
+            wappen.forEach((el, i) => {
+                el.style.transform = `translateY(${scrolled * (0.18 + i*0.07)}px)`;
+            });
+            if(title) {
+                title.style.transform = `translateY(${scrolled * 0.09}px)`;
+            }
+        });
     });
 })(jQuery);

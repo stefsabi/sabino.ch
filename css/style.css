@@ -1,5 +1,6 @@
 /* Copyright 1999-2017. Plesk International GmbH. All rights reserved. */
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek,greek-ext,vietnamese);
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&display=swap');
 html,
 body {
     height: 100%;
@@ -485,4 +486,107 @@ iframe { border: 1px solid #bebebe; }
 }
 .header, .section, .footer {
     color: #fff;
+}
+.gold-title {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 3.2rem;
+  color: #ffe066;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 16px #000a, 0 0 8px #ffe06699;
+  position: relative;
+  z-index: 2;
+}
+.header-glanz {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0.18) 100%);
+  opacity: 0.7;
+  z-index: 1;
+  animation: glanzmove 3s linear infinite alternate;
+}
+@keyframes glanzmove {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+.parallax-header { position: relative; overflow: hidden; }
+.parallax-wappen { will-change: transform; transition: transform 0.7s cubic-bezier(.4,0,.2,1); }
+/* Parallax JS folgt */
+.gold-ornament-top, .gold-ornament-bottom {
+  width: 100%;
+  height: 24px;
+  background: url('data:image/svg+xml;utf8,<svg fill="gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10"><path d="M0,5 Q25,0 50,5 T100,5" stroke="gold" stroke-width="2" fill="none"/></svg>') center/contain no-repeat;
+  margin: 1.2rem 0;
+  opacity: 0.7;
+}
+.dropcap {
+  float: left;
+  font-family: 'Cinzel', serif;
+  font-size: 3.2em;
+  line-height: 0.8;
+  color: #ffe066;
+  margin-right: 0.18em;
+  margin-top: 0.08em;
+  text-shadow: 0 2px 12px #000a;
+}
+.section-title, .timeline-section .section-title {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+}
+/* Timeline Styles */
+.timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 2.5rem 0 1.5rem 0;
+  position: relative;
+}
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: linear-gradient(90deg, #ffe066 0%, #fffbe6 100%);
+  border-radius: 2px;
+  z-index: 0;
+}
+.timeline-item {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 0;
+  min-width: 90px;
+  text-align: center;
+  animation: timelineIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+@keyframes timelineIn {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.timeline-dot {
+  width: 22px;
+  height: 22px;
+  background: #ffe066;
+  border: 3px solid #fffbe6;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem auto;
+  box-shadow: 0 2px 8px #0004;
+}
+.timeline-content {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
+  background: rgba(26,34,51,0.85);
+  border-radius: 0.7em;
+  padding: 0.7em 0.5em;
+  margin-top: 0.2em;
+  box-shadow: 0 2px 12px #0002;
+  border: 1.5px solid #ffe06644;
+}
+@media (max-width: 800px) {
+  .timeline { flex-direction: column; gap: 1.5rem; }
+  .timeline:before { top: 0; left: 50%; right: auto; width: 4px; height: 100%; background: linear-gradient(180deg, #ffe066 0%, #fffbe6 100%); }
+  .timeline-item { min-width: 0; }
 }
