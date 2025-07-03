@@ -390,9 +390,8 @@ iframe { border: 1px solid #bebebe; }
     color: #111;
     border-radius: 0;
     box-shadow: none;
-    margin: 2rem auto;
-    padding: 2.5rem 2rem;
-    max-width: 800px;
+    margin: 0;
+    padding: 1.5rem 2vw;
 }
 .section.visible {
     opacity: 1;
@@ -513,11 +512,9 @@ iframe { border: 1px solid #bebebe; }
 .parallax-wappen { will-change: transform; transition: transform 0.7s cubic-bezier(.4,0,.2,1); }
 /* Parallax JS folgt */
 .gold-ornament-top, .gold-ornament-bottom {
-  width: 100%;
-  height: 24px;
-  background: url('data:image/svg+xml;utf8,<svg fill="gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10"><path d="M0,5 Q25,0 50,5 T100,5" stroke="gold" stroke-width="2" fill="none"/></svg>') center/contain no-repeat;
-  margin: 1.2rem 0;
-  opacity: 0.7;
+  width: 100vw;
+  margin: 0.5rem 0;
+  opacity: 0.5;
 }
 .dropcap {
   float: left;
@@ -539,8 +536,10 @@ iframe { border: 1px solid #bebebe; }
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.5rem;
-  margin: 2.5rem 0 1.5rem 0;
+  margin: 1.5rem 0 1rem 0;
   position: relative;
+  border-radius: 0;
+  box-shadow: none;
 }
 .timeline:before {
   content: '';
