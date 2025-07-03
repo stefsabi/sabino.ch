@@ -1,19 +1,18 @@
 /* Copyright 1999-2017. Plesk International GmbH. All rights reserved. */
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek,greek-ext,vietnamese);
-html {
-    font: normal 13px/1.4 "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    overflow-y: scroll;
-    color: #000;
-}
 html,
 body {
     height: 100%;
-    min-height: 100%;
+    /* background-color: #000; */
 }
-body { margin: 0; }
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+    color: #1a2233;
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+    text-shadow: none;
+    margin: 0;
+}
 a { background-color: transparent; }
 a:active,
 a:hover { outline: 0; }
@@ -343,11 +342,6 @@ iframe { border: 1px solid #bebebe; }
 }
 
 /* Onepager Styles */
-body {
-    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
-    color: #1a2233;
-    font-family: 'Roboto', Arial, sans-serif;
-}
 .header {
     text-align: center;
     padding: 4rem 1rem 2rem 1rem;
