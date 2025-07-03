@@ -385,25 +385,22 @@ iframe { border: 1px solid #bebebe; }
     100% { transform: rotate(10deg); }
 }
 .section {
-    max-width: 800px;
-    margin: 3rem auto;
-    background: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
     border-radius: 1.5rem;
     box-shadow: 0 4px 32px #0001;
+    margin: 2rem auto;
     padding: 2.5rem 2rem;
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 1s cubic-bezier(.4,0,.2,1);
+    max-width: 800px;
 }
 .section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 .section-title {
+    color: #ffe066;
+    text-shadow: 2px 2px 8px #0008;
     font-size: 2rem;
-    color: #1a2233;
     margin-bottom: 1.2rem;
     font-weight: bold;
 }
