@@ -499,14 +499,10 @@ iframe { border: 1px solid #bebebe; }
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
-  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0.18) 100%);
-  opacity: 0.7;
+  background: transparent;
+  opacity: 0;
   z-index: 1;
-  animation: glanzmove 3s linear infinite alternate;
-}
-@keyframes glanzmove {
-  0% { opacity: 0.7; }
-  100% { opacity: 1; }
+  animation: none;
 }
 .parallax-header { position: relative; overflow: hidden; }
 .parallax-wappen { will-change: transform; transition: transform 0.7s cubic-bezier(.4,0,.2,1); }
