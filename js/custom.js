@@ -24,4 +24,23 @@
                 'video-background-default-image');
         }
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-text, .section-wappen').forEach(el => {
+            observer.observe(el);
+        });
+    });
 })(jQuery);

@@ -310,3 +310,34 @@ iframe { border: 1px solid #bebebe; }
     font-weight: 700;
     background: #fafafa;
 }
+
+/* Animierte Abschnittswechsel */
+.section-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.section-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-wappen {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 1.2s cubic-bezier(.4,0,.2,1), transform 1.2s cubic-bezier(.4,0,.2,1);
+}
+.section-wappen.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+  .section-text {
+    font-size: 1.1em;
+  }
+  .section-wappen {
+    width: 80px;
+    height: auto;
+  }
+}
