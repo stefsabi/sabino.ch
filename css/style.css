@@ -7,7 +7,7 @@ body {
     /* background-color: #000; */
 }
 body {
-    background: linear-gradient(135deg, #000000 0%, #0076fc 100%);
+    background: linear-gradient(135deg, #181818 0%, #232946 40%, #ffe066 100%);
     color: #fff;
     font-family: 'Roboto', Arial, sans-serif;
     text-align: center;
@@ -346,7 +346,7 @@ iframe { border: 1px solid #bebebe; }
 .header {
     text-align: center;
     padding: 4rem 1rem 2rem 1rem;
-    background: linear-gradient(120deg, #1a2233 60%, #f8fafc 100%);
+    background: transparent;
     color: #fff;
     position: relative;
     overflow: hidden;
