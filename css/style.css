@@ -527,39 +527,40 @@ iframe { border: 1px solid #bebebe; }
   font-family: 'Cinzel', 'Playfair Display', serif;
 }
 /* Timeline Styles */
+.timeline-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .timeline {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin: 1.5rem 0 1rem 0;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  border-radius: 0;
-  box-shadow: none;
 }
+
 .timeline:before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 5%;
-  right: 5%;
-  height: 4px;
-  background: linear-gradient(90deg, #ffe066 0%, #fffbe6 100%);
-  border-radius: 2px;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ffe066;
+  transform: translateX(-50%);
   z-index: 0;
 }
 .timeline-item {
+  background: #23272b;
+  border: none;
+  color: #fffbe6;
+  box-shadow: none;
+  padding: 0.5em 0;
+  font-size: 1.2em;
+  text-align: center;
   position: relative;
   z-index: 1;
-  flex: 1 1 0;
-  min-width: 90px;
-  text-align: center;
-  animation: timelineIn 1.2s cubic-bezier(.4,0,.2,1);
-}
-@keyframes timelineIn {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
 }
 .timeline-dot {
   width: 22px;
