@@ -26,18 +26,36 @@
 </head>
 
 <body>
-    <div class="header parallax-header">
+    <nav id="mainNav" class="navbar">
+        <div class="nav-container">
+            <a href="#start" class="nav-logo gold-title">Sabino</a>
+            <button class="nav-toggle" aria-label="Menü öffnen">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#start">Start</a></li>
+                <li><a href="#familie">Familie</a></li>
+                <li><a href="#geschichte">Geschichte</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#social">Social</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="header parallax-header" id="start">
         <div class="header-glanz"></div>
         <img src="img/sabino_print-logo1.png" alt="Wappen 1" class="section-wappen parallax-wappen">
         <img src="img/sabino_print-logo3.png" alt="Wappen 2" class="section-wappen parallax-wappen">
         <h1 class="gold-title">Familie Sabino <span class="funny-emoji">👑</span></h1>
         <div class="subtitle">Nobili – Feudatari – Patrizi – Conti <span class="funny-emoji">🎉</span></div>
     </div>
-    <div class="section" id="geschichte">
+    <div class="section" id="familie">
         <div class="gold-ornament-top"></div>
         <div class="section-title">Unsere (fast unglaubliche) Familiengeschichte <span class="funny-emoji">📜</span></div>
         <p><span class="dropcap">B</span>lasonierung der Familie Sabino oder Sabini aus Altamura<br>
-        Quelle: „Dizionario storico blasonico delle famiglie nobili e notabili italiene estinte e fiorenti“, Bd. II, zusammengestellt von Comm. G.B. di Crollalanza, Pisa 1888.</p>
+        Quelle: "Dizionario storico blasonico delle famiglie nobili e notabili italiene estinte e fiorenti", Bd. II, zusammengestellt von Comm. G.B. di Crollalanza, Pisa 1888.</p>
         <p>Die Familie Sabino ist ein altes und sehr edles Feudalgschlecht aus den Abruzzen, das ursprünglich in Chieti ansässig war und als Sabini oder Sabino bekannt ist. Im Laufe der Jahrhunderte verbreitete sich die Familie in verschiedene Regionen Italiens und der Welt. Der Legende nach stammt die Familie von Raino, Graf der Sabina im 9. Jahrhundert, ab – einem Zweig des berühmten Hauses der Crescenzi, das von der Mitte des 10. bis zur Mitte des 11. Jahrhunderts in der Geschichte Roms eine herausragende Rolle spielte.</p>
         <p>Historisch gesichert ist, dass die Familie gegen Ende des 16. Jahrhunderts nach L'Aquila übersiedelte und dort in den Patriziat aufgenommen wurde. Der Hauptzweig erlosch im 17. Jahrhundert, doch die Familie Sabino überlebte und lebt bis heute in den Seitenlinien fort, darunter auch jener Zweig in Lanciano, der Persönlichkeiten wie Orgelbauer und Musiker hervorbrachte.</p>
         <p>In Altamura blühte eine weitere gleichnamige Familie auf, deren Verwandtschaft mit der vorgenannten nicht historisch belegt ist. Zu ihr gehörte Bernardo, der 1497 für seine herausragenden Dienste – und die seiner Vorfahren – am Königshaus von Aragon vom König Friedrich in den Privilegien und im Titel eines Pfalzgrafen bestätigt wurde, die bereits Kaiser Heinrich VI. einem Angelo, seinem Vorfahren, verliehen hatte. Ebenso waren die Sabini in Venedig als Adelige anerkannt.</p>
@@ -70,6 +88,9 @@
     </div>
     <div class="footer">
         <span class="funny-emoji">🍝</span> Copyright &copy; by Stefano Sabino 2025 &ndash; "Wer Sabino heißt, hat immer einen Grund zu feiern!" <span class="funny-emoji">🥳</span>
+        <div class="footer-contact">
+            <a href="mailto:family@gsabino.ch">family@gsabino.ch</a> &nbsp;|&nbsp; <a href="tel:+41794602323">+41 79 460 23 23</a>
+        </div>
     </div>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

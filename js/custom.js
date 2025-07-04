@@ -59,5 +59,27 @@
                 title.style.transform = `translateY(${scrolled * 0.09}px)`;
             }
         });
+
+        // Hamburger Off-Canvas Navigation
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navToggle && navToggle.addEventListener('click', function(e) {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('open');
+            document.body.classList.toggle('menu-open');
+        });
+        navLinks.forEach(link => link.addEventListener('click', function() {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('open');
+            document.body.classList.remove('menu-open');
+        }));
+        document.addEventListener('click', function(e) {
+            if(navMenu.classList.contains('open') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('open');
+                document.body.classList.remove('menu-open');
+            }
+        });
     });
 })(jQuery);
