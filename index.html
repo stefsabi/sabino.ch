@@ -88,6 +88,28 @@
         <svg viewBox="0 0 448 512" width="24" height="24" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9-51.3-114.9-114.9-114.9zm0 186c-39.5 0-71.1-31.6-71.1-71.1s31.6-71.1 71.1-71.1 71.1 31.6 71.1 71.1-31.6 71.1-71.1 71.1zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.1S388.6 1.7 353.3 0C317.7-1.7 130.3-1.7 94.7 0 59.4 1.7 28 9.9 2.7 36.2S1.7 59.4 0 94.7C-1.7 130.3-1.7 317.7 0 353.3c1.7 35.3 9.9 66.7 36.2 92.1s56.8 34.5 92.1 36.2c35.6 1.7 223 1.7 258.6 0 35.3-1.7 66.7-9.9 92.1-36.2s34.5-56.8 36.2-92.1c1.7-35.6 1.7-223 0-258.6zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5C91.8 43.2 161.6 45.8 194.7 45.8s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.6 102.9-9 132.3z"/></svg>
       </a>
     </div>
+    <!-- Einfaches Kontaktformular -->
+    <form id="contact-form" action="sendmail.php" method="POST" style="max-width:400px;margin:2rem auto 0 auto;text-align:left;">
+      <div class="form-group">
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="contact-email">E-Mail</label>
+        <input type="email" id="contact-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="contact-message">Nachricht</label>
+        <textarea id="contact-message" name="message" rows="5" required></textarea>
+      </div>
+      <!-- Honeypot-Feld gegen Bots -->
+      <div style="display:none;">
+        <label for="contact-nobot">Lass dieses Feld leer</label>
+        <input type="text" id="contact-nobot" name="nobot">
+      </div>
+      <button type="submit" class="send-btn">Senden</button>
+      <div id="contact-success" style="display:none; color: var(--color-gold); margin-top:1rem;"></div>
+    </form>
   </section>
 
   <footer>
@@ -121,6 +143,33 @@
       };
       showTimelineItems();
       window.addEventListener('scroll', showTimelineItems);
+    });
+    // Füge einfaches JS für Bestätigungsmeldung ein
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const honeypot = document.getElementById('contact-nobot').value;
+      if (honeypot) return false;
+      const form = e.target;
+      const formData = new FormData(form);
+      fetch('sendmail.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById('contact-success').textContent = 'Danke für deine Nachricht!';
+          document.getElementById('contact-success').style.display = 'block';
+          form.reset();
+        } else {
+          document.getElementById('contact-success').textContent = data.error || 'Fehler beim Versand.';
+          document.getElementById('contact-success').style.display = 'block';
+        }
+      })
+      .catch(() => {
+        document.getElementById('contact-success').textContent = 'Fehler beim Versand.';
+        document.getElementById('contact-success').style.display = 'block';
+      });
     });
   </script>
 </body>
