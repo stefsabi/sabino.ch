@@ -155,6 +155,7 @@
     // Sanftes Einblenden der Wappen und Titel beim Laden
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.wappen-row').classList.add('fade-in');
+      document.getElementById('contact-modal').style.display = 'none'; // Fix: Modal beim Laden explizit verstecken
 
       // Timeline-Animation beim Scrollen
       const timelineItems = document.querySelectorAll('.timeline-item');
