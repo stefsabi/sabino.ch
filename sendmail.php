@@ -21,6 +21,10 @@ if ($name === '' || $email === '' || $message === '' || !filter_var($email, FILT
     echo json_encode(['success' => false, 'error' => 'Bitte alle Felder korrekt ausfüllen.']);
     exit;
 }
+if (mb_strlen($message) < 20) {
+    echo json_encode(['success' => false, 'error' => 'Die Nachricht muss mindestens 20 Zeichen lang sein.']);
+    exit;
+}
 
 $subject = "Neue Kontaktanfrage von $name";
 
