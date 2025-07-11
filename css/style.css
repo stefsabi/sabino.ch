@@ -1,45 +1,3 @@
-:root {
-  --bg-main: #f8f9fa;
-  --bg-header: #fff;
-  --bg-section: #fff;
-  --bg-footer: #23272b;
-  --text-main: #181b1f;
-  --text-invert: #fff;
-}
-[data-theme="dark"] {
-  --bg-main: #181b1f;
-  --bg-header: #23272b;
-  --bg-section: #23272b;
-  --bg-footer: #181b1f;
-  --text-main: #fffbe6;
-  --text-invert: #181b1f;
-}
-[data-theme="light"] {
-  --bg-main: #fff;
-  --bg-section: #fff;
-  --bg-header: #fff;
-  --bg-footer: #23272b;
-  --text-main: #181b1f;
-  --text-invert: #fff;
-  --accent-gold: #bfa100;
-}
-body {
-  background: var(--bg-main) !important;
-  color: var(--text-main) !important;
-}
-.header {
-  background: var(--bg-header) !important;
-  color: var(--text-main) !important;
-}
-.section {
-  background: var(--bg-section) !important;
-  color: var(--text-main) !important;
-}
-.footer {
-  background: var(--bg-footer) !important;
-  color: var(--text-invert) !important;
-}
-
 /* Copyright 1999-2017. Plesk International GmbH. All rights reserved. */
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek,greek-ext,vietnamese);
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&display=swap');
@@ -743,23 +701,4 @@ body.menu-open {
 .footer-contact a:hover {
   color: #fffbe6;
   text-decoration: underline;
-}
-[data-theme="light"] .timeline-item {
-  background: #fffbe6;
-  color: var(--text-main);
-  border: 1.5px solid #bfa10033;
-}
-[data-theme="light"] .timeline-content {
-  background: #fff;
-  color: var(--text-main);
-  border: 1.5px solid #bfa10033;
-}
-[data-theme="light"] .header .subtitle {
-  color: var(--text-main);
-}
-[data-theme="light"] .gold-title,
-[data-theme="light"] .section-title,
-[data-theme="light"] .dropcap,
-[data-theme="light"] .nav-logo {
-  color: var(--accent-gold);
 }
