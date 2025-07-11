@@ -298,7 +298,8 @@ footer {
   position: relative;
   margin: 0 auto;
   max-width: 500px;
-  /* padding-left: 30px; entfernt für zentrierte Kreise */
+  padding-left: 30px;
+  border-left: 3px solid var(--color-gold);
 }
 .timeline-item {
   position: relative;
@@ -313,8 +314,7 @@ footer {
 }
 .timeline-dot {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: -38px;
   top: 0.3rem;
   width: 18px;
   height: 18px;
@@ -341,11 +341,10 @@ footer {
     padding: 1.2rem 0.5rem 1.2rem 0.5rem;
   }
   .timeline {
-    /* padding-left: 18px; entfernt für zentrierte Kreise */
+    padding-left: 18px;
   }
   .timeline-dot {
-    left: 50%;
-    transform: translateX(-50%);
+    left: -24px;
     width: 12px;
     height: 12px;
     border-width: 3px;
