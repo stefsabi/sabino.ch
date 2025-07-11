@@ -108,8 +108,11 @@
         <input type="text" id="contact-nobot" name="nobot" autocomplete="off">
       </div>
       <button type="submit" class="send-btn">Senden</button>
-      <div id="contact-success" style="display:none; color: var(--color-gold); margin-top:1rem;"></div>
     </form>
+    <div id="contact-success-block" style="display:none; max-width:400px; margin:2rem auto 0 auto; text-align:left;">
+      <div id="contact-success" style="color: var(--color-gold); margin-bottom:1rem;"></div>
+      <button id="contact-again-btn" type="button" class="send-btn" style="background:var(--color-dark);color:var(--color-gold);border:1px solid var(--color-gold);">Weitere Nachricht senden</button>
+    </div>
   </section>
 
   <footer>
@@ -149,7 +152,9 @@
     (function() {
       const form = document.getElementById('contact-form');
       if (!form) return;
+      const successBlock = document.getElementById('contact-success-block');
       const successDiv = document.getElementById('contact-success');
+      const againBtn = document.getElementById('contact-again-btn');
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         // Felder prüfen
@@ -164,19 +169,28 @@
         .then(data => {
           if (data.success) {
             successDiv.textContent = 'Danke für deine Nachricht!';
-            successDiv.style.display = 'block';
+            form.style.display = 'none';
+            successBlock.style.display = 'block';
             form.reset();
           } else {
             successDiv.textContent = data.error || 'Fehler beim Versand.';
-            successDiv.style.display = 'block';
+            successBlock.style.display = 'block';
           }
         })
         .catch(() => {
           successDiv.textContent = 'Fehler beim Versand.';
-          successDiv.style.display = 'block';
+          successBlock.style.display = 'block';
         });
       });
+      if (againBtn) {
+        againBtn.addEventListener('click', function() {
+          form.reset();
+          form.style.display = 'block';
+          successBlock.style.display = 'none';
+        });
+      }
     })();
   </script>
 </body>
 </html>
+
