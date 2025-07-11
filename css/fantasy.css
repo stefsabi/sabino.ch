@@ -550,3 +550,8 @@ footer {
   clip: rect(0,0,0,0);
   border: 0;
 } 
+
+.timeline-section,
+.contact-social-section {
+  max-width: 800px;
+} 
