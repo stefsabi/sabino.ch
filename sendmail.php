@@ -48,12 +48,7 @@ $body = "Name: $name\nE-Mail: $email\n\nNachricht:\n$message\n";
 if (mail($to, $subject, $body, $headers)) {
     if ($isAjax) {
         header('Content-Type: application/json');
-        echo json_encode([
-            'success' => true,
-            'name' => $name,
-            'email' => $email,
-            'message' => $message
-        ]);
+        echo json_encode(['success' => true]);
     } else {
         echo '<h2>Danke für deine Nachricht!</h2><p>Wir melden uns so schnell wie möglich.</p>';
     }
