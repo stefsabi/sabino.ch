@@ -82,4 +82,32 @@
             }
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle ? themeToggle.querySelector('i') : null;
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = localStorage.getItem('theme');
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            if(icon) {
+                if(theme === 'dark') {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                } else {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            }
+        }
+        let theme = storedTheme || (prefersDark ? 'dark' : 'light');
+        setTheme(theme);
+        if(themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                theme = (document.documentElement.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+                setTheme(theme);
+                localStorage.setItem('theme', theme);
+            });
+        }
+    });
 })(jQuery);
