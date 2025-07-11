@@ -89,7 +89,10 @@
       </a>
     </div>
     <!-- Einfaches Kontaktformular -->
-    <form id="contact-form" action="sendmail.php" method="POST" style="max-width:400px;margin:2rem auto 0 auto;text-align:left;">
+    <noscript>
+      <div style="color:red;max-width:400px;margin:2rem auto;text-align:left;">Das Kontaktformular benötigt JavaScript. Bitte aktiviere JavaScript in deinem Browser.</div>
+    </noscript>
+    <form id="contact-form" method="POST" style="max-width:400px;margin:2rem auto 0 auto;text-align:left;">
       <div class="form-group">
         <label for="contact-name">Name</label>
         <input type="text" id="contact-name" name="name" required>
@@ -165,7 +168,10 @@
           method: 'POST',
           body: formData
         })
-        .then(res => res.json())
+        .then(res => {
+          if (!res.ok) throw new Error('Serverfehler');
+          return res.json();
+        })
         .then(data => {
           if (data.success) {
             successDiv.textContent = 'Danke für deine Nachricht!';
