@@ -102,7 +102,7 @@
   </section>
 
   <!-- Kontaktformular Modal -->
-  <div id="contact-modal" class="modal-overlay" style="display:none;">
+  <div id="contact-modal" class="modal-overlay">
     <div class="modal-content">
       <button class="modal-close" id="close-contact-modal" aria-label="Schließen">&times;</button>
       <h2>Kontaktformular</h2>
@@ -155,7 +155,8 @@
     // Sanftes Einblenden der Wappen und Titel beim Laden
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.wappen-row').classList.add('fade-in');
-      document.getElementById('contact-modal').style.display = 'none'; // Fix: Modal beim Laden explizit verstecken
+      const contactModal = document.getElementById('contact-modal');
+      contactModal.classList.remove('active'); // Modal beim Laden explizit verstecken
 
       // Timeline-Animation beim Scrollen
       const timelineItems = document.querySelectorAll('.timeline-item');
@@ -180,16 +181,16 @@
     const contactModal = document.getElementById('contact-modal');
     openModalBtn.addEventListener('click', e => {
       e.preventDefault();
-      contactModal.style.display = 'flex';
+      contactModal.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
     closeModalBtn.addEventListener('click', () => {
-      contactModal.style.display = 'none';
+      contactModal.classList.remove('active');
       document.body.style.overflow = '';
     });
     contactModal.addEventListener('click', e => {
       if (e.target === contactModal) {
-        contactModal.style.display = 'none';
+        contactModal.classList.remove('active');
         document.body.style.overflow = '';
       }
     });
@@ -210,7 +211,7 @@
           document.getElementById('contact-success').textContent = 'Danke für deine Nachricht!';
           document.getElementById('contact-success').style.display = 'block';
           setTimeout(() => {
-            contactModal.style.display = 'none';
+            contactModal.classList.remove('active');
             document.body.style.overflow = '';
             document.getElementById('contact-success').style.display = 'none';
             form.reset();
