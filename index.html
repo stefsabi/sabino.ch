@@ -144,33 +144,39 @@
       showTimelineItems();
       window.addEventListener('scroll', showTimelineItems);
     });
-    // Füge einfaches JS für Bestätigungsmeldung ein
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const honeypot = document.getElementById('contact-nobot').value;
-      if (honeypot) return false;
-      const form = e.target;
-      const formData = new FormData(form);
-      fetch('sendmail.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          document.getElementById('contact-success').textContent = 'Danke für deine Nachricht!';
-          document.getElementById('contact-success').style.display = 'block';
-          form.reset();
-        } else {
-          document.getElementById('contact-success').textContent = data.error || 'Fehler beim Versand.';
-          document.getElementById('contact-success').style.display = 'block';
-        }
-      })
-      .catch(() => {
-        document.getElementById('contact-success').textContent = 'Fehler beim Versand.';
-        document.getElementById('contact-success').style.display = 'block';
+
+    // Kontaktformular: AJAX-Submit mit Bestätigung direkt im Formular
+    (function() {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      const successDiv = document.getElementById('contact-success');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Felder prüfen
+        const honeypot = document.getElementById('contact-nobot').value;
+        if (honeypot) return false;
+        const formData = new FormData(form);
+        fetch('sendmail.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            successDiv.textContent = 'Danke für deine Nachricht!';
+            successDiv.style.display = 'block';
+            form.reset();
+          } else {
+            successDiv.textContent = data.error || 'Fehler beim Versand.';
+            successDiv.style.display = 'block';
+          }
+        })
+        .catch(() => {
+          successDiv.textContent = 'Fehler beim Versand.';
+          successDiv.style.display = 'block';
+        });
       });
-    });
+    })();
   </script>
 </body>
 </html>
