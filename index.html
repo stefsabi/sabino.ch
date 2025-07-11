@@ -151,28 +151,36 @@
       window.addEventListener('scroll', showTimelineItems);
     });
 
-    // Kontaktformular: AJAX-Submit mit Bestätigung direkt im Formular
-    (function() {
+    // --- MINIMALER AJAX-KONTAKTFORMULAR-CODE ---
+    document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('contact-form');
-      if (!form) return;
       const successBlock = document.getElementById('contact-success-block');
       const successDiv = document.getElementById('contact-success');
       const againBtn = document.getElementById('contact-again-btn');
+      if (!form) {
+        console.error('Formular nicht gefunden!');
+        return;
+      }
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        // Felder prüfen
+        console.log('Submit-Handler ausgelöst');
         const honeypot = document.getElementById('contact-nobot').value;
-        if (honeypot) return false;
+        if (honeypot) {
+          console.warn('Honeypot ausgefüllt, Abbruch.');
+          return false;
+        }
         const formData = new FormData(form);
         fetch('sendmail.php', {
           method: 'POST',
           body: formData
         })
         .then(res => {
-          if (!res.ok) throw new Error('Serverfehler');
+          console.log('Antwort von sendmail.php:', res);
+          if (!res.ok) throw new Error('Serverfehler: ' + res.status);
           return res.json();
         })
         .then(data => {
+          console.log('Antwort-Daten:', data);
           if (data.success) {
             successDiv.textContent = 'Danke für deine Nachricht!';
             form.style.display = 'none';
@@ -183,8 +191,9 @@
             successBlock.style.display = 'block';
           }
         })
-        .catch(() => {
-          successDiv.textContent = 'Fehler beim Versand.';
+        .catch(err => {
+          console.error('AJAX-Fehler:', err);
+          successDiv.textContent = 'Fehler beim Versand: ' + err;
           successBlock.style.display = 'block';
         });
       });
@@ -195,7 +204,7 @@
           successBlock.style.display = 'none';
         });
       }
-    })();
+    });
   </script>
 </body>
 </html>
