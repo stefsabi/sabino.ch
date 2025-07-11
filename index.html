@@ -173,7 +173,7 @@
       });
     });
 
-    // Minimaler AJAX-Kontaktformular-Code (bleibt wie gehabt, aber IDs im Modal!)
+    // Minimaler AJAX-Kontaktformular-Code mit Anzeige der gesendeten Daten
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('contact-form');
       const successBlock = document.getElementById('contact-success-block');
@@ -186,6 +186,9 @@
         const honeypot = document.getElementById('contact-nobot').value;
         if (honeypot) return false;
         const formData = new FormData(form);
+        const name = form.querySelector('[name="name"]').value;
+        const email = form.querySelector('[name="email"]').value;
+        const message = form.querySelector('[name="message"]').value;
         fetch('sendmail.php', {
           method: 'POST',
           body: formData
@@ -196,12 +199,9 @@
         })
         .then(data => {
           if (data.success) {
-            successBlock.textContent = 'Danke für deine Nachricht!';
+            form.style.display = 'none';
+            successBlock.innerHTML = `<strong>Danke für deine Nachricht!</strong><br><br><b>Name:</b> ${data.name || name}<br><b>E-Mail:</b> ${data.email || email}<br><b>Nachricht:</b><br>${(data.message || message).replace(/\n/g, '<br>')}`;
             successBlock.style.display = 'block';
-            setTimeout(() => {
-              successBlock.style.display = 'none';
-              form.reset();
-            }, 2000);
           } else {
             successBlock.textContent = data.error || 'Fehler beim Versand.';
             successBlock.style.display = 'block';
