@@ -103,9 +103,9 @@
         <textarea id="contact-message" name="message" rows="5" required></textarea>
       </div>
       <!-- Honeypot-Feld gegen Bots -->
-      <div style="display:none;">
+      <div class="visually-hidden">
         <label for="contact-nobot">Lass dieses Feld leer</label>
-        <input type="text" id="contact-nobot" name="nobot">
+        <input type="text" id="contact-nobot" name="nobot" autocomplete="off">
       </div>
       <button type="submit" class="send-btn">Senden</button>
       <div id="contact-success" style="display:none; color: var(--color-gold); margin-top:1rem;"></div>
