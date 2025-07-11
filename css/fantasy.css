@@ -536,3 +536,6 @@ footer {
     margin: 1rem 0;
   }
 } 
+
+/* TEST: Timeline-Items immer sichtbar machen */
+.timeline-item { opacity: 1 !important; transform: none !important; } 
